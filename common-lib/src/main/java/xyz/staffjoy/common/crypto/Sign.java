@@ -53,6 +53,12 @@ public class Sign {
         return verifyToken(tokenString, signingToken);
     }
 
+    /**
+     * 校验 JWT Token
+     * @param tokenString
+     * @param signingToken
+     * @return
+     */
     static DecodedJWT verifyToken(String tokenString, String signingToken) {
         JWTVerifier verifier = verifierMap.get(signingToken);
         if (verifier == null) {
@@ -70,6 +76,14 @@ public class Sign {
         return jwt;
     }
 
+    /**
+     * 生成JWT Token
+     * @param userId
+     * @param signingToken
+     * @param support
+     * @param duration
+     * @return
+     */
     public static String generateSessionToken(String userId, String signingToken, boolean support, long duration) {
         if (StringUtils.isEmpty(signingToken)) {
             throw new ServiceException("No signing token present");

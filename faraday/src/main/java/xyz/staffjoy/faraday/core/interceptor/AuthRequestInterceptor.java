@@ -139,7 +139,7 @@ public class AuthRequestInterceptor implements PreForwardRequestInterceptor {
 
     private Session getSession(HttpServletRequest request) {
         String token = Sessions.getToken(request);
-        if (token == null) return null;
+        if (token == null){ return null;}
         try {
             DecodedJWT decodedJWT = Sign.verifySessionToken(token, signingSecret);
             String userId = decodedJWT.getClaim(Sign.CLAIM_USER_ID).asString();
