@@ -28,4 +28,5 @@ public class Account {
     private boolean support;
     private String phoneNumber;
     private String photoUrl;
+    private String passwordHash;
 }

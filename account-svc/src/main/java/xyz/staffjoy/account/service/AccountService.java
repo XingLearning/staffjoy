@@ -118,9 +118,11 @@ public class AccountService {
         if (phoneNumber == null) {
             phoneNumber = "";
         }
+        // 设置默认密码 admin
+        String pwHash = passwordEncoder.encode("admin");
 
         Account account = Account.builder()
-                .email(email).name(name).phoneNumber(phoneNumber)
+                .email(email).name(name).phoneNumber(phoneNumber).passwordHash(pwHash)
                 .build();
         account.setPhotoUrl(Helper.generateGravatarUrl(account.getEmail()));
         account.setMemberSince(Instant.now());

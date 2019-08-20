@@ -17,6 +17,9 @@ import xyz.staffjoy.web.service.HelperService;
 import xyz.staffjoy.web.view.Constant;
 import xyz.staffjoy.web.view.PageFactory;
 
+/**
+ * 注册控制器
+ */
 @Controller
 public class SignupController {
 
@@ -44,6 +47,7 @@ public class SignupController {
                 .email(email)
                 .build();
 
+        // 通用账号返回 response
         GenericAccountResponse genericAccountResponse = null;
         try {
             genericAccountResponse = accountClient.createAccount(AuthConstant.AUTHORIZATION_WWW_SERVICE, request);

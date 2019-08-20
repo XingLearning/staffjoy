@@ -2,6 +2,9 @@ package xyz.staffjoy.common.auth;
 
 public class AuthConstant {
 
+    /**
+     * cookie_name:staffjoy-faraday
+     */
     public static final String COOKIE_NAME = "staffjoy-faraday";
     // header set for internal user id
     public static final String CURRENT_USER_HEADER = "faraday-current-user-id";

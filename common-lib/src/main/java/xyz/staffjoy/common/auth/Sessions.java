@@ -27,6 +27,7 @@ public class Sessions {
                                  String signingSecret,
                                  String externalApex,
                                  HttpServletResponse response) {
+        // 持续时间
         long duration;
         int maxAge;
 
@@ -38,8 +39,10 @@ public class Sessions {
         }
         maxAge = (int) (duration / 1000);
 
+        //生产 JWT Toke
         String token = Sign.generateSessionToken(userId, signingSecret, support, duration);
 
+        // 种植 cookie name:staffjoy-faraday
         Cookie cookie = new Cookie(AuthConstant.COOKIE_NAME, token);
         cookie.setPath("/");
         cookie.setDomain(externalApex);
@@ -59,7 +62,7 @@ public class Sessions {
     }
 
     /**
-     * 用户登出
+     *
      * @param externalApex
      * @param response
      */
