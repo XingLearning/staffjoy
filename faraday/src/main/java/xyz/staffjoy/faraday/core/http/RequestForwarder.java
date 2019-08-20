@@ -65,6 +65,7 @@ public class RequestForwarder {
                 data.getMethod(), data.getHost(), destination.getUri().toString(),
                 data.getBody(), data.getHeaders());
         RequestEntity<byte[]> request = new RequestEntity<>(data.getBody(), data.getHeaders(), data.getMethod(), destination.getUri());
+        // 发送请求
         ResponseData response = sendRequest(traceId, request, mapping, destination.getMappingMetricsName(), data);
 
         log.debug(String.format("Forwarded: %s %s %s -> %s %d", data.getMethod(), data.getHost(), data.getUri(), destination.getUri(), response.getStatus().value()));

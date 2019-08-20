@@ -66,6 +66,7 @@ public class ICalService {
         try {
             shiftListResponse = companyClient.listWorkerShifts(AuthConstant.AUTHORIZATION_ICAL_SERVICE, workerShiftListRequest);
         } catch (Exception ex) {
+            // 无工人排班信息
             String errMsg = "unable to get worker shifts";
             handleErrorAndThrowException(ex, errMsg);
         }

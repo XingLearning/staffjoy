@@ -77,7 +77,7 @@ Staffjoy教学版所采用的技术栈都是目前行业主流，数量不多，
 
 1. 配置文件
 
-Staffjoy教学版依赖一些私密配置，例如sentry-dsn和aliyun-access-key等等，这些私密配置不能checkin到github上，所以采用了Spring的一种私密配置机制，私密数据集中配置在**config/application.yml**中，这个文件在gitignore中，不会被checkin到github。请参考config目录中的[application.yml.example](config/application.yml.example)文件和格式，在config目录中添加一个**appliction.yml**文件，其中填写你自己的私密配置。如果你暂时没有这些配置，可以暂时用假数据，直接把application.yml.example，改为application.yml，这样应用可以运行起来。注意，如果aliyun相关配置不配，则无法发送邮件或短信，sentry相关配置不配则无法发送异常数据到sentry，intercom不配则不能对接intercom客服系统，recaptcha暂未用可以不配。
+Staffjoy教学版依赖一些私密配置，例如sentry-dsn和aliyun-access-key等等，这些私密配置不能checkin到github上，所以采用了Spring的一种私密配置机制，私密数据集中配置在**config/application.yml**中，这个文件在gitignore中，不会被checkin到github。请参考config目录中的[application.yml.example](config/application.yml)文件和格式，在config目录中添加一个**appliction.yml**文件，其中填写你自己的私密配置。如果你暂时没有这些配置，可以暂时用假数据，直接把application.yml.example，改为application.yml，这样应用可以运行起来。注意，如果aliyun相关配置不配，则无法发送邮件或短信，sentry相关配置不配则无法发送异常数据到sentry，intercom不配则不能对接intercom客服系统，recaptcha暂未用可以不配。
 
 TODO
 

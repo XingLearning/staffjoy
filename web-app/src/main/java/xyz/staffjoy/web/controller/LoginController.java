@@ -90,8 +90,8 @@ public class LoginController {
                     account = genericAccountResponse.getAccount();
                 }
             }
-
-            if (account != null) { // login success
+            // login success 登录成功
+            if (account != null) {
                 // set cookie
                 Sessions.loginUser(account.getId(),
                         account.isSupport(),

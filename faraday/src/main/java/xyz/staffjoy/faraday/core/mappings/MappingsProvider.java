@@ -14,6 +14,9 @@ import java.util.stream.Collectors;
 
 import static org.springframework.util.CollectionUtils.isEmpty;
 
+/**
+ * 路由配置超类
+ */
 public abstract class MappingsProvider {
 
     private static final ILogger log = SLoggerFactory.getLogger(MappingsProvider.class);
@@ -36,6 +39,12 @@ public abstract class MappingsProvider {
         this.httpClientProvider = httpClientProvider;
     }
 
+    /**
+     * 解析 路由映射关系
+     * @param originHost 主机头
+     * @param request
+     * @return
+     */
     public MappingProperties resolveMapping(String originHost, HttpServletRequest request) {
         if (shouldUpdateMappings(request)) {
             updateMappings();

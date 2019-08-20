@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 静态配置 构建映射配置，从config中的.yml文件中读取
+ */
 public class ConfigurationMappingsProvider extends MappingsProvider {
 
     public ConfigurationMappingsProvider(

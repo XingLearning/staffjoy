@@ -14,6 +14,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 编码方式 构建映射配置
+ */
 public class ProgrammaticMappingsProvider extends MappingsProvider {
     protected final EnvConfig envConfig;
 

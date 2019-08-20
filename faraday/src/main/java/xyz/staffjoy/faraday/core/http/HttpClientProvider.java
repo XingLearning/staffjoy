@@ -13,6 +13,9 @@ import java.util.Map;
 import static java.util.stream.Collectors.toMap;
 import static org.apache.http.impl.client.HttpClientBuilder.create;
 
+/**
+ * httpclient 映射表
+ */
 public class HttpClientProvider {
     protected Map<String, RestTemplate> httpClients = new HashMap<>();
 

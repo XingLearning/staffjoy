@@ -1,6 +1,5 @@
 package xyz.staffjoy.faraday.core.mappings;
 
-import xyz.staffjoy.common.services.ServiceDirectory;
 import xyz.staffjoy.faraday.config.MappingProperties;
 import xyz.staffjoy.faraday.exceptions.FaradayException;
 
@@ -8,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.stream.Collectors.toSet;
-import static org.apache.commons.lang3.StringUtils.*;
+import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.removeEnd;
 import static org.springframework.util.CollectionUtils.isEmpty;
 
 public class MappingsValidator {

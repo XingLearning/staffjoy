@@ -20,10 +20,12 @@ public class MappingProperties {
     private String host = "";
     /**
      * List of destination hosts where HTTP requests will be forwarded.
+     * 目标服务地址
      */
     private List<String> destinations = new ArrayList<>();
     /**
      * Properties responsible for timeout while forwarding HTTP requests.
+     * 超时配置
      */
     private TimeoutProperties timeout = new TimeoutProperties();
 

@@ -72,6 +72,7 @@ public class ReverseProxyFilter extends OncePerRequestFilter {
         String traceId = traceInterceptor.generateTraceId();
         traceInterceptor.onRequestReceived(traceId, method, originHost, originUri, headers);
 
+        //路由解析
         MappingProperties mapping = mappingsProvider.resolveMapping(originHost, request);
         if (mapping == null) {
             traceInterceptor.onNoMappingFound(traceId, method, originHost, originUri, headers);
@@ -86,6 +87,7 @@ public class ReverseProxyFilter extends OncePerRequestFilter {
         }
 
         byte[] body = extractor.extractBody(request);
+        // 添加转发 headers
         addForwardHeaders(request, headers);
 
         RequestData dataToForward = new RequestData(method, originHost, originUri, headers, body, request);

@@ -5,14 +5,19 @@ import lombok.*;
 import java.util.HashMap;
 import java.util.Map;
 
-// environment related configuration
+/**
+ * environment related configuration
+ * 环境关系配置
+ */
 @Data
 @Builder
 public class EnvConfig {
 
     private String name;
     private boolean debug;
+    // 外部
     private String externalApex;
+    // 内部
     private String internalApex;
     private String scheme;
 
