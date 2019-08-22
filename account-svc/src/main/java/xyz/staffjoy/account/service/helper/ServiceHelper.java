@@ -217,7 +217,7 @@ public class ServiceHelper {
         }
     }
 
-    public void handleException(ILogger log, Exception ex, String errMsg) {
+        public void handleException(ILogger log, Exception ex, String errMsg) {
         log.error(errMsg, ex);
         if (!envConfig.isDebug()) {
             sentryClient.sendException(ex);
