@@ -2,12 +2,13 @@
 # this file should and will not be checked into version control
 staffjoy:
   common:
-    sentry-dsn: https://80bbf4ae778b525f9fe72e2813cd5246@sentry.io/1271087
+    # sentry 日志收集 https://sentry.io/settings/szhg/projects/hg-sentry/
+    sentry-dsn: https://3a0074b7f7b9413b9ae2141ae92e76fa@sentry.io/1538039
   signing-secret: YOUR-SIGNING-SECRET
-  intercom-access-token: YOUR-INTERCOM-ACCESS-TOKEN
   aliyun-access-key: YOUR-ALIYUN-ACCESS-KEY
   aliyun-access-secret: YOUR-ALIYUN-ACCESS-SECRET
   aliyun-sms-sign-name: YOUR-ALIYUN-SMS-SIGN-NAME
+  intercom-access-token: YOUR-INTERCOM-ACCESS-TOKEN
   intercom-app-id: YOUR-INTERCOM-APP-ID
   intercom-signing-secret: YOUR-INTERCOM-SIGNING-SECRET
   recaptcha-public: YOUR-RECAPTCHA-PUBLIC
