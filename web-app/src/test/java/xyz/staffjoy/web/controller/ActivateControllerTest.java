@@ -61,6 +61,10 @@ public class ActivateControllerTest {
     @Autowired
     PageFactory pageFactory;
 
+    /**
+     * 启用账号 测试
+     * @throws Exception
+     */
     @Test
     public void testActivateAccount() throws Exception {
         String name = "test_user";

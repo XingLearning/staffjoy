@@ -28,7 +28,7 @@ target/
 .DS_Store
 
 ### Spring Dev Credentials ###
-config/*.yml
+#config/*.yml
 
 ### Docker Test Credentials ###
 .env
