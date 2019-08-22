@@ -12,8 +12,20 @@ import xyz.staffjoy.company.dto.WorkerOfList;
 @AllArgsConstructor
 @Builder
 public class IAmDto {
+    /**
+     * 是否支持者
+     */
     private boolean support;
+    /**
+     * 用户ID
+     */
     private String userId;
+    /**
+     * 工人列表
+     */
     private WorkerOfList workerOfList;
+    /**
+     * 管理列表
+     */
     private AdminOfList adminOfList;
 }
