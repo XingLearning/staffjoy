@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import static xyz.staffjoy.faraday.core.utils.BodyConverter.convertBodyToString;
 
+/**
+ * Unmodifiable 不可修改的 请求数据体
+ */
 public class UnmodifiableRequestData {
 
     protected HttpMethod method;

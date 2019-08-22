@@ -161,6 +161,7 @@ public class LoginControllerTest {
     public void testLoginFail() throws Exception {
         GenericAccountResponse genericAccountResponse = new GenericAccountResponse();
         genericAccountResponse.setCode(ResultCode.UN_AUTHORIZED);
+        // 密码错误
         genericAccountResponse.setMessage("Incorrect password");
         when(accountClient.verifyPassword(anyString(), any(VerifyPasswordRequest.class)))
                 .thenReturn(genericAccountResponse);

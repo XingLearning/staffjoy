@@ -58,11 +58,15 @@ public abstract class MappingsProvider {
         return resolvedMappings.get(0);
     }
 
+    /**
+     * 更新路由
+     */
     @PostConstruct
     protected synchronized void updateMappings() {
         List<MappingProperties> newMappings = retrieveMappings();
         mappingsValidator.validate(newMappings);
         mappings = newMappings;
+        // 更新请求路由
         httpClientProvider.updateHttpClients(mappings);
         log.info("Destination mappings updated", mappings);
     }

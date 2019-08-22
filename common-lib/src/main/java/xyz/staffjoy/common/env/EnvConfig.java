@@ -29,7 +29,8 @@ public class EnvConfig {
         map = new HashMap<String, EnvConfig>();
         EnvConfig envConfig = EnvConfig.builder().name(EnvConstant.ENV_DEV)
                 .debug(true)
-                .externalApex("staffjoy-v2.local")
+                .externalApex("staffjoy-v2.local" +
+                        "")
                 .internalApex(EnvConstant.ENV_DEV)
                 .scheme("http")
                 .build();
