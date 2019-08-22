@@ -4,12 +4,12 @@ staffjoy:
   common:
     # sentry 日志收集 https://sentry.io/settings/szhg/projects/hg-sentry/
     sentry-dsn: https://3a0074b7f7b9413b9ae2141ae92e76fa@sentry.io/1538039
-  signing-secret: YOUR-SIGNING-SECRET
+  signing-secret: secret
   aliyun-access-key: YOUR-ALIYUN-ACCESS-KEY
   aliyun-access-secret: YOUR-ALIYUN-ACCESS-SECRET
-  aliyun-sms-sign-name: YOUR-ALIYUN-SMS-SIGN-NAME
+  aliyun-sms-sign-name: staffjoy
   intercom-access-token: YOUR-INTERCOM-ACCESS-TOKEN
-  intercom-app-id: YOUR-INTERCOM-APP-ID
-  intercom-signing-secret: YOUR-INTERCOM-SIGNING-SECRET
-  recaptcha-public: YOUR-RECAPTCHA-PUBLIC
-  recaptcha-private: YOUR-RECAPTCHA-PRIVATE
+  intercom-app-id: tbd
+  intercom-signing-secret: tbd
+  recaptcha-public: test-recaptch-public
+  recaptcha-private: test-recaptch-private
