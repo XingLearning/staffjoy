@@ -5,8 +5,8 @@ staffjoy:
     # sentry 日志收集 https://sentry.io/settings/szhg/projects/hg-sentry/
     sentry-dsn: https://3a0074b7f7b9413b9ae2141ae92e76fa@sentry.io/1538039
   signing-secret: secret
-  aliyun-access-key: YOUR-ALIYUN-ACCESS-KEY
-  aliyun-access-secret: YOUR-ALIYUN-ACCESS-SECRET
+  aliyun-access-key: LTAIVxgbNQGm7HCw
+  aliyun-access-secret: ylhF7NhgloCMpgwdSfYVp9blo4t5FW
   aliyun-sms-sign-name: staffjoy
   intercom-access-token: YOUR-INTERCOM-ACCESS-TOKEN
   intercom-app-id: tbd

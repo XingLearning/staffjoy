@@ -116,3 +116,18 @@ Staffjoy应用的业务功能相对简单，简单讲就是帮助小企业管理
 * [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) 微软支持
 * [microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) 谷歌支持
 * [piggy-metrics](https://github.com/sqshq/piggymetrics)
+
+
+
+### My hosts
+
+
+    127.0.0.1 account.staffjoy-v2.local
+    127.0.0.1 faraday.staffjoy-v2.local
+    127.0.0.1 company.staffjoy-v2.local
+    127.0.0.1 ical.staffjoy-v2.local
+    127.0.0.1 whoami.staffjoy-v2.local
+    127.0.0.1 superpowers.staffjoy-v2.local
+    127.0.0.1 www.staffjoy-v2.local
+    127.0.0.1 myaccount.staffjoy-v2.local
+    127.0.0.1 app.staffjoy-v2.local
