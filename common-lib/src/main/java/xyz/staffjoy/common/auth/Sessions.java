@@ -51,6 +51,11 @@ public class Sessions {
         response.addCookie(cookie);
     }
 
+    /**
+     * 获取token
+     * @param request
+     * @return
+     */
     public static String getToken(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
         if (cookies == null || cookies.length == 0){ return null;}
@@ -62,7 +67,7 @@ public class Sessions {
     }
 
     /**
-     *
+     * 退出登录
      * @param externalApex
      * @param response
      */

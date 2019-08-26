@@ -5,8 +5,6 @@ import xyz.staffjoy.common.api.ResultCode;
 
 /**
  * Business Service Exception
- *
- * @author william
  */
 public class ServiceException extends RuntimeException {
     private static final long serialVersionUID = 2359767895161832954L;
