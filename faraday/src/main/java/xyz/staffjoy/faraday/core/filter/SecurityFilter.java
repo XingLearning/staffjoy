@@ -16,6 +16,9 @@ import java.net.URISyntaxException;
 
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 
+/**
+ * 安全过滤器
+ */
 public class SecurityFilter extends OncePerRequestFilter {
     private static final ILogger log = SLoggerFactory.getLogger(SecurityFilter.class);
 
@@ -29,6 +32,7 @@ public class SecurityFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         // TODO - Determine how to force SSL. Depends on frontend load balancer config.
+        // 确定如何强制SSL。取决于前端负载均衡器配置。
         String origin = request.getHeader("Origin");
         if (!isEmpty(origin)) {
             response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, origin);
