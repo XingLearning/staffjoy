@@ -54,7 +54,8 @@ public class FaradayConfiguration {
     public FilterRegistrationBean<ReverseProxyFilter> faradayReverseProxyFilterRegistrationBean(
             ReverseProxyFilter proxyFilter) {
         FilterRegistrationBean<ReverseProxyFilter> registrationBean = new FilterRegistrationBean<>(proxyFilter);
-        registrationBean.setOrder(faradayProperties.getFilterOrder()); // by default to Ordered.HIGHEST_PRECEDENCE + 100
+        // by default to Ordered.HIGHEST_PRECEDENCE + 100
+        registrationBean.setOrder(faradayProperties.getFilterOrder());
         return registrationBean;
     }
 
@@ -62,7 +63,8 @@ public class FaradayConfiguration {
     public FilterRegistrationBean<NakedDomainFilter> nakedDomainFilterRegistrationBean(EnvConfig envConfig) {
         FilterRegistrationBean<NakedDomainFilter> registrationBean =
                 new FilterRegistrationBean<>(new NakedDomainFilter(envConfig));
-        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE + 90); // before ReverseProxyFilter
+        // before ReverseProxyFilter
+        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE + 90);
         return registrationBean;
     }
 
@@ -70,7 +72,8 @@ public class FaradayConfiguration {
     public FilterRegistrationBean<SecurityFilter> securityFilterRegistrationBean(EnvConfig envConfig) {
         FilterRegistrationBean<SecurityFilter> registrationBean =
                 new FilterRegistrationBean<>(new SecurityFilter(envConfig));
-        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE + 80); // before nakedDomainFilter
+        // before nakedDomainFilter
+        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE + 80);
         return registrationBean;
     }
 
@@ -78,7 +81,8 @@ public class FaradayConfiguration {
     public FilterRegistrationBean<FaviconFilter> faviconFilterRegistrationBean() {
         FilterRegistrationBean<FaviconFilter> registrationBean =
                 new FilterRegistrationBean<>(new FaviconFilter(assetLoader.getFaviconFile()));
-        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE + 75); // before securityFilter
+        // before securityFilter
+        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE + 75);
         return registrationBean;
     }
 
@@ -86,7 +90,8 @@ public class FaradayConfiguration {
     public FilterRegistrationBean<HealthCheckFilter> healthCheckFilterRegistrationBean() {
         FilterRegistrationBean<HealthCheckFilter> registrationBean =
                 new FilterRegistrationBean<>(new HealthCheckFilter());
-        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE + 70); // before faviconFilter
+        // before faviconFilter
+        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE + 70);
         return registrationBean;
     }
 

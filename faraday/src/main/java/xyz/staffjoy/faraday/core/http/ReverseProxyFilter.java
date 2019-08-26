@@ -25,6 +25,9 @@ import static java.lang.String.valueOf;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.springframework.util.CollectionUtils.isEmpty;
 
+/**
+ * faraday 代理控制类
+ */
 public class ReverseProxyFilter extends OncePerRequestFilter {
 
     protected static final String X_FORWARDED_FOR_HEADER = "X-Forwarded-For";
@@ -58,7 +61,7 @@ public class ReverseProxyFilter extends OncePerRequestFilter {
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException {
         String originUri = extractor.extractUri(request);
         String originHost = extractor.extractHost(request);
 

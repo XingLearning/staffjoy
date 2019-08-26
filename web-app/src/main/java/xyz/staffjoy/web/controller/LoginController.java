@@ -62,7 +62,8 @@ public class LoginController {
                         HttpServletResponse response) {
 
         LoginPage loginPage = pageFactory.buildLoginPage();
-        loginPage.setReturnTo(returnTo); // for GET
+        // for GET
+        loginPage.setReturnTo(returnTo);
 
         // if logged in - go away
         if (!StringUtils.isEmpty(AuthContext.getAuthz()) && !AuthConstant.AUTHORIZATION_ANONYMOUS_WEB.equals(AuthContext.getAuthz())) {
