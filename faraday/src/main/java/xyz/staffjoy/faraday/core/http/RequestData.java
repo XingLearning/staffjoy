@@ -8,7 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import static xyz.staffjoy.faraday.core.utils.BodyConverter.convertStringToBody;
 
 public class RequestData extends UnmodifiableRequestData {
+    /**
+     * 是否 重定向
+     */
     private boolean needRedirect;
+    /**
+     * 重定向 url
+     */
     private String redirectUrl;
 
     public RequestData(HttpMethod method,
