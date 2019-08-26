@@ -13,6 +13,9 @@ import static java.util.Collections.list;
 import static org.apache.commons.io.IOUtils.toByteArray;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
+/**
+ * 请求解析器
+ */
 public class RequestDataExtractor {
 
     public byte[] extractBody(HttpServletRequest request) {

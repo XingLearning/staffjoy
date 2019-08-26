@@ -13,6 +13,10 @@ import static org.springframework.util.CollectionUtils.isEmpty;
 
 public class MappingsValidator {
 
+    /**
+     * 路由验证
+     * @param mappings
+     */
     public void validate(List<MappingProperties> mappings) {
         if (!isEmpty(mappings)) {
             mappings.forEach(this::correctMapping);

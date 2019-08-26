@@ -93,7 +93,8 @@ public class AccountService {
         return this.convertToDto(account);
     }
 
-    public AccountDto create(String name, String email, String phoneNumber) {
+    public AccountDto
+    create(String name, String email, String phoneNumber) {
         if (StringUtils.hasText(email)) {
             // Check to see if account exists
             Account foundAccount = accountRepo.findAccountByEmail(email);

@@ -13,8 +13,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Service {
-    private int security; // Public, Authenticated, or Admin
-    private boolean restrictDev; // If true, service is suppressed in stage and prod
-    private String backendDomain;  // Backend service to query
-    private boolean noCacheHtml; // If true, injects a header for HTML responses telling the browser not to cache HTML
+    /**
+     * Public, Authenticated, or Admin
+     */
+    private int security;
+    /**
+     * If true, service is suppressed in stage and prod
+     */
+    private boolean restrictDev;
+    /**
+     * Backend service to query
+     * 后端服务查询
+     */
+    private String backendDomain;
+    /**
+     * If true, injects a header for HTML responses telling the browser not to cache HTML
+     * 如果为true，则为HTML响应注入一个标头，告知浏览器不要缓存HTML
+     */
+    private boolean noCacheHtml;
 }

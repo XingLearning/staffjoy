@@ -30,14 +30,26 @@ import static org.springframework.util.CollectionUtils.isEmpty;
  */
 public class ReverseProxyFilter extends OncePerRequestFilter {
 
+    /**
+     * （XFF）报头是用于通过 HTTP 代理或负载平衡器识别连接到 web 服务器的客户端的发起 IP 地址的事实上的标准报头。
+     */
     protected static final String X_FORWARDED_FOR_HEADER = "X-Forwarded-For";
+    /**
+     * （XFP）报头是用于识别协议（HTTP 或 HTTPS）
+     */
     protected static final String X_FORWARDED_PROTO_HEADER = "X-Forwarded-Proto";
+    /**
+     * （XFH）报头是用于识别由客户机在所要求的原始主机一个事实上的标准报头Host的 HTTP 请求报头。
+     */
     protected static final String X_FORWARDED_HOST_HEADER = "X-Forwarded-Host";
     protected static final String X_FORWARDED_PORT_HEADER = "X-Forwarded-Port";
 
     private static final ILogger log = SLoggerFactory.getLogger(ReverseProxyFilter.class);
 
     protected final FaradayProperties faradayProperties;
+    /**
+     * 请求参数抽取
+     */
     protected final RequestDataExtractor extractor;
     protected final MappingsProvider mappingsProvider;
     protected final RequestForwarder requestForwarder;
@@ -65,12 +77,10 @@ public class ReverseProxyFilter extends OncePerRequestFilter {
         String originUri = extractor.extractUri(request);
         String originHost = extractor.extractHost(request);
 
-        log.debug("Incoming request", "method", request.getMethod(),
-                "host", originHost,
-                "uri", originUri);
-
         HttpHeaders headers = extractor.extractHttpHeaders(request);
         HttpMethod method = extractor.extractHttpMethod(request);
+
+        log.debug("Incoming: %s %s %s -> request", "method", method, "host", originHost, "uri", originUri);
 
         String traceId = traceInterceptor.generateTraceId();
         traceInterceptor.onRequestReceived(traceId, method, originHost, originUri, headers);
@@ -94,15 +104,17 @@ public class ReverseProxyFilter extends OncePerRequestFilter {
         addForwardHeaders(request, headers);
 
         RequestData dataToForward = new RequestData(method, originHost, originUri, headers, body, request);
+        // 转发 前的截获器
         preForwardRequestInterceptor.intercept(dataToForward, mapping);
         if (dataToForward.isNeedRedirect() && !isBlank(dataToForward.getRedirectUrl())) {
             log.debug(String.format("Redirecting to -> %s", dataToForward.getRedirectUrl()));
             response.sendRedirect(dataToForward.getRedirectUrl());
             return;
         }
-
+        // 进行请求转发
         ResponseEntity<byte[]> responseEntity =
                 requestForwarder.forwardHttpRequest(dataToForward, traceId, mapping);
+        // 处理转发响应
         this.processResponse(response, responseEntity);
     }
 
@@ -126,6 +138,7 @@ public class ReverseProxyFilter extends OncePerRequestFilter {
         );
         if (responseEntity.getBody() != null) {
             try {
+                //得到响应body
                 response.getOutputStream().write(responseEntity.getBody());
             } catch (IOException e) {
                 throw new FaradayException("Error writing body of HTTP response", e);

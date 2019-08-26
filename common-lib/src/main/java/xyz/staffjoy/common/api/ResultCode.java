@@ -7,12 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Result Code Enum
- *
- * @author william
  */
 @Getter
 @AllArgsConstructor
 public enum ResultCode {
+
     SUCCESS(HttpServletResponse.SC_OK, "Operation is Successful"),
 
     FAILURE(HttpServletResponse.SC_BAD_REQUEST, "Biz Exception"),

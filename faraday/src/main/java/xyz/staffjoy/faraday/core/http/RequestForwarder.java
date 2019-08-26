@@ -71,6 +71,7 @@ public class RequestForwarder {
         log.debug(String.format("Forwarded: %s %s %s -> %s %d", data.getMethod(), data.getHost(), data.getUri(), destination.getUri(), response.getStatus().value()));
 
         traceInterceptor.onForwardComplete(traceId, response.getStatus(), response.getBody(), response.getHeaders());
+        // 响应截获器
         postForwardResponseInterceptor.intercept(response, mapping);
         prepareForwardedResponseHeaders(response);
 
@@ -121,10 +122,20 @@ public class RequestForwarder {
         }
     }
 
+    /**
+     * 发送请求
+     * @param traceId
+     * @param request
+     * @param mapping
+     * @param mappingMetricsName
+     * @param requestData
+     * @return
+     */
     protected ResponseData sendRequest(String traceId, RequestEntity<byte[]> request, MappingProperties mapping, String mappingMetricsName, RequestData requestData ) {
         ResponseEntity<byte[]> response;
         long startingTime = nanoTime();
         try {
+            // 获取httpClient 请求映射信息，exchange 执行请求转发
             response = httpClientProvider.getHttpClient(mapping.getName()).exchange(request, byte[].class);
             recordLatency(mappingMetricsName, startingTime);
         } catch (HttpStatusCodeException e) {

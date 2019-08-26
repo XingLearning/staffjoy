@@ -24,12 +24,21 @@ import javax.annotation.PreDestroy;
 @EnableConfigurationProperties(StaffjoyProps.class)
 public class StaffjoyConfig implements WebMvcConfigurer {
 
+    /**
+     * 运行环境
+     */
     @Value("${spring.profiles.active:NA}")
     private String activeProfile;
 
+    /**
+     * 应用名称
+     */
     @Value("${spring.application.name:NA}")
     private String appName;
 
+    /**
+     * 基础配置
+     */
     @Autowired
     StaffjoyProps staffjoyProps;
 

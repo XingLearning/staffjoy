@@ -14,11 +14,19 @@ import java.util.Map;
 public class EnvConfig {
 
     private String name;
+    /**
+     * 是否开启 debug 模式
+     */
     private boolean debug;
-    // 外部
+    /**
+     * 外部
+     */
     private String externalApex;
-    // 内部
+    /**
+     * 内部
+     */
     private String internalApex;
+
     private String scheme;
 
     @Getter(AccessLevel.NONE)

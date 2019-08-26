@@ -14,10 +14,15 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StaffjoyProps {
+
+    /**
+     * sentry 第三方开源日志收集平台
+     */
     @NotBlank
     private String sentryDsn;
-    @NotBlank
+
     // DeployEnvVar is set by Kubernetes during a new deployment so we can identify the code version
+    @NotBlank
     private String deployEnv;
 }
 

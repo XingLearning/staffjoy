@@ -6,6 +6,8 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Authorize {
+
+
     // allowed consumers
     String[] value();
 }
