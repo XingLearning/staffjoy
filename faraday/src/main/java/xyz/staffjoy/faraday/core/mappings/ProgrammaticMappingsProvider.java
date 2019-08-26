@@ -41,10 +41,14 @@ public class ProgrammaticMappingsProvider extends MappingsProvider {
         List<MappingProperties> mappings = new ArrayList<>();
         Map<String, Service> serviceMap = ServiceDirectory.getMapping();
         for(String key : serviceMap.keySet()) {
+            // key 统一转换为小写
             String subDomain = key.toLowerCase();
+
             Service service = serviceMap.get(key);
             MappingProperties mapping = new MappingProperties();
+            // 拼接 对应的服务路由
             mapping.setName(subDomain + "_route");
+            // 拼接 对应的服务主机头
             mapping.setHost(subDomain + "." + envConfig.getExternalApex());
             // No security on backend right now :-(
             String dest = "http://" + service.getBackendDomain();
