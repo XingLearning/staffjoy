@@ -6,12 +6,14 @@ import java.util.TreeMap;
 
 /**
  * ServiceDirectory allows access to a backend service using its subdomain
+ * ServiceDirectory 允许使用其子域访问后端服务
  *
  * StaffjoyServices ia a map of subdomains -> specs
  * Subdomain is <string> + Env["rootDomain"]
  * e.g. "login" service on prod is "login" + "staffjoy.xyz"
  *
  * KEEP THIS LIST IN ALPHABETICAL ORDER PLEASE
+ * 请按照字母顺序保留此列表
  */
 public class ServiceDirectory {
 
