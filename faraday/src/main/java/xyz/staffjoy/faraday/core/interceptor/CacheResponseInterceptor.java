@@ -5,7 +5,9 @@ import xyz.staffjoy.faraday.config.MappingProperties;
 import xyz.staffjoy.faraday.core.http.ResponseData;
 
 import java.util.List;
-
+/**
+ * 缓存响应拦截器
+ */
 public class CacheResponseInterceptor implements PostForwardResponseInterceptor {
     @Override
     public void intercept(ResponseData data, MappingProperties mapping) {

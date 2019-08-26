@@ -25,7 +25,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * 认证请求拦截器
+ */
 public class AuthRequestInterceptor implements PreForwardRequestInterceptor {
     private final static ILogger log = SLoggerFactory.getLogger(AuthRequestInterceptor.class);
 
