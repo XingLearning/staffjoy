@@ -1,4 +1,4 @@
-package xyz.staffjoy.faraday.core.http;
+package xyz.staffjoy.faraday.core.filter;
 
 import com.github.structlog4j.ILogger;
 import com.github.structlog4j.SLoggerFactory;
@@ -8,13 +8,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.filter.OncePerRequestFilter;
 import xyz.staffjoy.faraday.config.FaradayProperties;
 import xyz.staffjoy.faraday.config.MappingProperties;
+import xyz.staffjoy.faraday.core.http.RequestData;
+import xyz.staffjoy.faraday.core.http.RequestDataExtractor;
+import xyz.staffjoy.faraday.core.http.RequestForwarder;
 import xyz.staffjoy.faraday.core.interceptor.PreForwardRequestInterceptor;
 import xyz.staffjoy.faraday.core.mappings.MappingsProvider;
 import xyz.staffjoy.faraday.core.trace.ProxyingTraceInterceptor;
 import xyz.staffjoy.faraday.exceptions.FaradayException;
 
 import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
