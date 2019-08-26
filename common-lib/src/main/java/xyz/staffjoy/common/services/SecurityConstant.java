@@ -1,7 +1,9 @@
 package xyz.staffjoy.common.services;
 
+/**
+ * 安全常量
+ */
 public class SecurityConstant {
-
     /**
      * Public security means a user may be logged out or logged in
      * 公共安全意味着用户可能已注销或登录
