@@ -14,9 +14,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
+/**
+ * TODO Client side validation can be enabled as needed
+ * 可以根据需要启用客户端验证
+ */
 @FeignClient(name = AccountConstant.SERVICE_NAME, path = "/v1/account", url = "${staffjoy.account-service-endpoint}")
-// TODO Client side validation can be enabled as needed
-// @Validated
 public interface AccountClient {
 
     /**
