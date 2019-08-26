@@ -68,7 +68,12 @@ public class RequestForwarder {
         // 发送请求
         ResponseData response = sendRequest(traceId, request, mapping, destination.getMappingMetricsName(), data);
 
-        log.debug(String.format("Forwarded: %s %s %s -> %s %d", data.getMethod(), data.getHost(), data.getUri(), destination.getUri(), response.getStatus().value()));
+        log.debug(String.format("Forwarded: %s %s %s -> %s %d",
+                data.getMethod(),
+                data.getHost(),
+                data.getUri(),
+                destination.getUri(),
+                response.getStatus().value()));
 
         traceInterceptor.onForwardComplete(traceId, response.getStatus(), response.getBody(), response.getHeaders());
         // 响应截获器
